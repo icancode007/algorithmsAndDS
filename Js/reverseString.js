@@ -1,4 +1,4 @@
-// --- Directions
+// --- Directions-----
 // Given a string, return a new string with the reversed
 // order of characters
 // --- Examples
@@ -16,14 +16,31 @@
 // }
 
 //solution 2
-function reverse( str ) {
-    let iterator = str[ Symbol.iterator ]();
-    let curr = iterator.next();
-    const chars = [];
-    chars.unshift( curr.value );
-    while ( !curr.done ) {
-        curr = iterator.next();
-        chars.unshift( curr.value )
-    }
-    return chars.join( '' );
+// function reverse( str ) {
+//     let iterator = str[ Symbol.iterator ]();
+//     let curr = iterator.next();
+//     const chars = [];
+//     chars.unshift( curr.value );
+//     while ( !curr.done ) {
+//         curr = iterator.next();
+//         chars.unshift(curr.value)
+//     }
+//     return chars.join('');
+// }
+
+//solution 3 - Completely cheating :P
+// const reverse = str => str.split('').reverse().join('');
+
+//solution 4 
+// function reverse(str) {
+//     let reversed = '';
+//     for(let char of str) {
+//         reversed = char + reversed;
+//     }
+//     return reversed;
+// }
+
+//solution 5
+function reverse(str) {
+    return str.split.reduce((reverser, currArrElement) => reverser += currArrElement, '')
 }
